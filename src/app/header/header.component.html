@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="gap"></span>
+    <span>Liri Labs</span>
+    <span class = "filler"></span>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <div class = "example-button-row">
+      <button mat-icon-button>
+        <mat-icon aria-label="arrow_back">arrow_back</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon aria-label="arrow_forward">arrow_forward</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon aria-label="close">close</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon aria-label="Home">home</mat-icon>
+      </button>
+    </div>
+    <span class ="filler"></span>
+    <mat-form-field appearance="outline">
+      <mat-icon matPrefix>search</mat-icon>
+      <mat-label>Search...</mat-label>
+      <input matInput type="text" placeholder="Search..." gormControlName="search">
+    </mat-form-field>
+  </mat-toolbar-row>
+</mat-toolbar>
