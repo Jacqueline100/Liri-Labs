@@ -6,6 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The Src file contains the header component file, app component file and login component file. You can find the html, css and ts file in these file.
 
+You may igonre the post component since it has no relation to the task 1. 
+
 ## Development server
 
 Run `ng serve` for a dev server. 
