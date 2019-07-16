@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
+## Src
+
+The Src file contains the header component file, app component file and login component file. You can find the html, css and ts file in these file.
+
 ## Development server
 
 Run `ng serve` for a dev server. 
