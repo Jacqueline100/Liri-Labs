@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { startWith, map} from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
 
 
 @Component({
@@ -9,16 +10,31 @@ import { startWith, map} from 'rxjs/operators';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+  // tslint:disable-next-line: member-ordering
+  userIsAuthenticated = false;
+  // tslint:disable-next-line: member-ordering
+  private authListenerSubs: Subscription;
+
+  constructor(private authService: AuthService) {}
   control = new FormControl();
   labs: string[] = ['Liri Labs'];
   filteredLabs: Observable<string[]>;
 
   ngOnInit() {
+    this.authListenerSubs = this.authService.getAuthStatusListener().subscribe(
+      isAuthenticated => {
+        this.userIsAuthenticated = isAuthenticated;
+      });
+
     this.filteredLabs = this.control.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );
+  }
+
+  ngOnDestroy() {
+    this.authListenerSubs.unsubscribe();
   }
 
   private _filter(value: string): string[] {

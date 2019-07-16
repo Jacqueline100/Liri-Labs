@@ -18,8 +18,11 @@
       <button mat-icon-button>
         <mat-icon aria-label="Home">home</mat-icon>
       </button>
-      <a mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a>
-      <a mat-button routerLink="/signup" routerLinkActive="mat-primary">Signup</a>
+      <a *ngIf="!userIsAuthenticated" mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a>
+      <a *ngIf="!userIsAuthenticated" mat-button routerLink="/signup" routerLinkActive="mat-primary">Signup</a>
+      <li *ngIf="userIsAuthenticated">
+          <a mat-button>Logout</a>
+      </li>
     </div>
     <span class ="filler"></span>
     <mat-form-field appearance="outline">
