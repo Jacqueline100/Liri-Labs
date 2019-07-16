@@ -9,3 +9,13 @@ mat-form-field {
 .example-full-width {
   width: 100%;
 }
+
+.filler {
+  margin-right: 0px;
+  width: 100%;
+}
+
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
