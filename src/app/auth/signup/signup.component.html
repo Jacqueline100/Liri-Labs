@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-title class="gap">LIRI LABS</mat-card-title>
-  <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+  <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
     <mat-form-field appearance="outline">
       <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
       <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
@@ -9,9 +9,7 @@
       <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
       <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
     </mat-form-field>
-    <span class="spacer"></span>
-    <a href="#">Forgot password</a>
     <p>
-    <button class="gap" mat-raised-button color = "primary" type="submit">LOG IN</button>
+    <button class="gap" mat-raised-button color = "primary" type="submit">SIGN UP</button>
   </form>
 </mat-card>
